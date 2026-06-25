@@ -2,17 +2,19 @@ import { useState } from "react";
 import V1App from "./versions/v1/App";
 import V2App from "./versions/v2/App";
 import V3App from "./versions/v3/App";
+import V4App from "./versions/v4/App";
 
-type VersionId = "v1" | "v2" | "v3";
+type VersionId = "v1" | "v2" | "v3" | "v4";
 
 const VERSIONS: { id: VersionId; label: string; Component: React.ComponentType }[] = [
   { id: "v1", label: "Version 1", Component: V1App },
   { id: "v2", label: "Version 2", Component: V2App },
   { id: "v3", label: "Version 3", Component: V3App },
+  { id: "v4", label: "Version 4", Component: V4App },
 ];
 
 export default function App() {
-  const [version, setVersion] = useState<VersionId>("v1");
+  const [version, setVersion] = useState<VersionId>("v4");
 
   const Active = VERSIONS.find((v) => v.id === version)!.Component;
 
