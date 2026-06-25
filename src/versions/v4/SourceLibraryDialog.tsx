@@ -685,6 +685,7 @@ export default function SourceLibraryDialog({ onClose, currentCourseName, attach
     });
     setPendingPromptSourceIds([]);
     setPendingCourseSourceIds([]);
+    onClose();
   }
 
   function deactivateAllSources() {
